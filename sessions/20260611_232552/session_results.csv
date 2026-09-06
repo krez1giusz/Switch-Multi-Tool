@@ -1,0 +1,7 @@
+num,timestamp,port,serial,model,ios,mac,profile,status,reason,excel_status,note,log_path,source
+1,2026-06-11 23:25:52,COM5,not read,,,,Cisco Catalyst 2960 / 2960-C,UNLOCKED,Enable i configure terminal dostępne bez hasła,No order file selected,,logs\COM5_20260611_232549.log,auto
+2,2026-06-11 23:27:43,COM5,not read,,,,Cisco Catalyst 2960 / 2960-C,DAMAGED,Manual override,Manual,,logs\COM5_20260611_232549.log,manual
+3,2026-06-11 23:27:53,COM5,not read,,,,Cisco Catalyst 2960 / 2960-C,UNLOCKED,Manual override,Manual,,logs\COM5_20260611_232549.log,manual
+4,2026-06-11 23:28:14,COM5,not read,,,,Cisco Catalyst 2960 / 2960-C,UNLOCKED,Enable i configure terminal dostępne bez hasła,No order file selected,,logs\COM5_20260611_232811.log,auto
+5,2026-06-11 23:28:20,COM5,not read,,,,Cisco Catalyst 2960 / 2960-C,UNLOCKED,Enable i configure terminal dostępne bez hasła,No order file selected,,logs\COM5_20260611_232817.log,auto
+6,2026-06-11 23:29:48,COM5,not read,,,,Cisco Catalyst 2960 / 2960-C,UNLOCKED,Enable i configure terminal dostępne bez hasła,No order file selected,,logs\COM5_20260611_232945.log,auto
