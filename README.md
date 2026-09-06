@@ -1,10 +1,10 @@
-# SwitchMultiTool v0.4.0-hotfix1
+# SwitchMultiTool v1.0.0
 
 ![SwitchMultiTool screenshot](SMT1.png)
 
-Prototype tool for working with network switches over a serial console. This version is
-deliberately limited to **a single device at a time** and does not yet implement
-TIR/batch mode.
+A desktop tool for servicing network switches over a serial console. This
+version is deliberately limited to **a single device at a time** and does not
+yet implement TIR/batch mode.
 
 ## About the project
 
@@ -25,9 +25,7 @@ feature. Everything planned for this scope works in practice. Batch mode
 (multiple switches at once, TIR/batch) is a future development stage and is
 not covered by this PoC.
 
-## Current working state
-
-The app already has active features beyond the original hotfix scope:
+## Features
 
 - Check password / F5 with `--More--` pager handling.
 - Read Device Info / F4 using commands from the profile.
@@ -46,28 +44,21 @@ The app already has active features beyond the original hotfix scope:
 - Log viewer with filtering and `Copy summary`.
 - Auto profile detection for Cisco 2960/2960X/generic IOS.
 - Command profiles in `config/switchmultitool.ini`.
+- Automatic flow-control suggestion based on VID:PID (CH340 `1A86:7523` -> `raw-win-only`).
 
 Session IDs are a date and time, e.g. `20260611_231500`.
 
-## What's in this version
+## Layout
 
-- Rebrand to **SwitchMultiTool**.
-- New layout for a single-device workflow:
-  - Connection / COM,
-  - Device profile,
-  - Current device,
-  - Actions,
-  - Live terminal serial,
-  - Developer / state machine,
-  - Recent checks in current session.
-- Kept the working **Check password** procedure.
-- Kept the `raw-win-only` fallback for CH340 adapters.
-- Automatic flow-control suggestion based on VID:PID:
-  - CH340 `1A86:7523` -> `raw-win-only`.
-- Buttons for future stages are visible but intentionally disabled:
-  - Read Device Info,
-  - Set Test Password,
-  - Password Recovery Wizard.
+The single-device workflow is organized into:
+
+- Connection / COM,
+- Device profile,
+- Current device,
+- Actions,
+- Live terminal serial,
+- Developer / state machine,
+- Recent checks in current session.
 
 ## Running on Windows
 
@@ -136,16 +127,9 @@ Main settings live in `config/switchmultitool.ini`, no need to touch the code:
 Files deleted by the Recovery Wizard are in the `[recovery]` section, `delete_files` field.
 Format: `filename|required` or `filename|optional`.
 
-## Upcoming staged releases
+## Roadmap
 
-- `v0.4.1` — Read Device Info: `show version`, `show inventory`, model/serial/hostname parsing.
-- `v0.4.2` — Set Test Password: setting up a test `enable secret` and optionally console/vty.
-- `v0.4.3` — Password Recovery Wizard: a guided password reset procedure for Cisco IOS / 2960-C.
-
-## Hotfix 0.4.0-hotfix1
-
-- The left panel is now scrollable, so the Status section and buttons don't run off-screen.
-- The password detector no longer stops after a fixed 120 seconds if the switch is still
-  sending boot logs. It now waits up to 360 s and watches for console idle.
-- After a long boot, it performs an extra ENTER/nudge before marking the result as UNKNOWN.
-- Shortened the labels of future buttons for a clearer panel.
+- Read Device Info: `show version`, `show inventory`, model/serial/hostname parsing.
+- Set Test Password: setting up a test `enable secret` and optionally console/vty.
+- Password Recovery Wizard: a guided password reset procedure for Cisco IOS / 2960-C.
+- Batch/TIR mode: handling multiple switches in one session.
