@@ -1,5 +1,7 @@
 # SwitchMultiTool v0.4.0-hotfix1
 
+![SwitchMultiTool screenshot](SMT1.png)
+
 Prototype tool for working with network switches over a serial console. This version is
 deliberately limited to **a single device at a time** and does not yet implement
 TIR/batch mode.
